@@ -13,6 +13,7 @@
 		87370DDE2B6C1B9500836512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87370DDC2B6C1B9500836512 /* LaunchScreen.storyboard */; };
 		87370DE82B6C23A400836512 /* CardSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87370DE72B6C23A400836512 /* CardSelectionVC.swift */; };
 		87370DEC2B6C289D00836512 /* CWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87370DEB2B6C289D00836512 /* CWButton.swift */; };
+		87370DEE2B6C377B00836512 /* RuleDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87370DED2B6C377B00836512 /* RuleDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		87370DDF2B6C1B9500836512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87370DE72B6C23A400836512 /* CardSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionVC.swift; sourceTree = "<group>"; };
 		87370DEB2B6C289D00836512 /* CWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWButton.swift; sourceTree = "<group>"; };
+		87370DED2B6C377B00836512 /* RuleDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				87370DD12B6C1B9400836512 /* AppDelegate.swift */,
 				87370DD32B6C1B9400836512 /* SceneDelegate.swift */,
 				87370DE72B6C23A400836512 /* CardSelectionVC.swift */,
+				87370DED2B6C377B00836512 /* RuleDetailsVC.swift */,
 				87370DEB2B6C289D00836512 /* CWButton.swift */,
 				87370DDA2B6C1B9500836512 /* Assets.xcassets */,
 				87370DDC2B6C1B9500836512 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				87370DD22B6C1B9400836512 /* AppDelegate.swift in Sources */,
 				87370DD42B6C1B9400836512 /* SceneDelegate.swift in Sources */,
+				87370DEE2B6C377B00836512 /* RuleDetailsVC.swift in Sources */,
 				87370DE82B6C23A400836512 /* CardSelectionVC.swift in Sources */,
 				87370DEC2B6C289D00836512 /* CWButton.swift in Sources */,
 			);
