@@ -9,7 +9,7 @@ import UIKit
 
 class RuleDetailsVC: UIViewController {
     
-    var doneButton      = CWButton()
+    var doneButton      = CWButton(config: .plain(), color: .blue, title: "Done")
     let titleLabel      = UILabel()
     let rulesLabel      = UILabel()
     let exerciseLabel   = UILabel()
@@ -30,16 +30,14 @@ class RuleDetailsVC: UIViewController {
     }
     
     func configureDoneButton() {
-        doneButton.setTitle("Done", for: .normal)
-        doneButton.setTitleColor(.blue, for: .normal)
         view.addSubview(doneButton)
         doneButton.addTarget(self, action: #selector(dismissRuleDetailsVC), for: .touchUpInside)
 
 
         NSLayoutConstraint.activate([
-            doneButton.widthAnchor.constraint(equalToConstant: 100),
+            doneButton.widthAnchor.constraint(equalToConstant: 75),
             doneButton.heightAnchor.constraint(equalToConstant: 50),
-            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            doneButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             doneButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 10)
         ])
     }
