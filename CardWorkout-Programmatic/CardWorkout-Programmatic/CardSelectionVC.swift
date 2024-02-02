@@ -13,6 +13,9 @@ class CardSelectionVC: UIViewController {
     var stopButton      = CWButton(backgroundColor: .red, title: "Stop!")
     var restartButton   = CWButton(backgroundColor: .orange, title: "Restart")
     var rulesButton     = CWButton(backgroundColor: .blue, title: "Rules")
+    
+    var cards: [UIImage] = Deck.allValues
+    var timer: Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,22 @@ class CardSelectionVC: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
         configureUI()
+        
+        startTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer.invalidate()
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(generateRandomCard), userInfo: nil, repeats: true)
+    }
+    
+    @objc func generateRandomCard() {
+        cardImageView.image = cards.randomElement()
     }
     
     func configureUI() {
@@ -44,6 +63,7 @@ class CardSelectionVC: UIViewController {
     
     func configureStopButton() {
         view.addSubview(stopButton)
+        stopButton.addTarget(self, action: #selector(stopTimer), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             stopButton.widthAnchor.constraint(equalToConstant: 260),
@@ -55,6 +75,7 @@ class CardSelectionVC: UIViewController {
     
     func configureRestartButton() {
         view.addSubview(restartButton)
+        restartButton.addTarget(self, action: #selector(restartTimer), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             restartButton.widthAnchor.constraint(equalToConstant: 115),
@@ -78,6 +99,15 @@ class CardSelectionVC: UIViewController {
     
     @objc func presentRuleDetailsVC() {
         present(RuleDetailsVC(), animated: true)
+    }
+    
+    @objc func stopTimer() {
+        timer.invalidate()
+    }
+    
+    @objc func restartTimer() {
+        stopTimer()
+        startTimer()
     }
 
 }
